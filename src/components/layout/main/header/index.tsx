@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/main/navbar";
 import Switch from "@/components/common/switch";
@@ -10,14 +10,14 @@ import useIsMobile from "@/components/hooks/useIsMobile";
 const Header = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const isMobile = useIsMobile();
+  const [prevIsMobile, setPrevIsMobile] = useState(isMobile);
+
+  if (isMobile !== prevIsMobile) {
+    setPrevIsMobile(isMobile);
+    if (!isMobile) setIsNavbarOpen(false);
+  }
 
   const toggleNavbar = () => setIsNavbarOpen(!isNavbarOpen);
-
-  useEffect(() => {
-    if (!isMobile) {
-      setIsNavbarOpen(false);
-    }
-  }, [isMobile]);
 
   return (
     <motion.header

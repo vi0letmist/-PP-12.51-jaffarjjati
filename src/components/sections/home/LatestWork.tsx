@@ -150,9 +150,9 @@ const LatestWork = () => {
               further and see it in action with a real use case.
               <br />
               <br />i built it with that in mind, and i want this to be a project
-              that i keep improving over time. there's always something to refine,
-              add, or optimize, and i see it as a way to continuously learn and
-              apply new things as i go.
+              that i keep improving over time. there&apos;s always something to
+              refine, add, or optimize, and i see it as a way to continuously
+              learn and apply new things as i go.
             </h1>
           </CardTitleImage>
         </motion.div>
